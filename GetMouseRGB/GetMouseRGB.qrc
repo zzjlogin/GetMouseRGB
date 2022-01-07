@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/GetMouseRGB">
+        <file>icon/pc.ico</file>
+    </qresource>
+</RCC>

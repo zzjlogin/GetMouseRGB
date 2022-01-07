@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+Debug
+
+x64
+
+GetMouseRGB/Debug
+GetMouseRGB/GeneratedFiles
+GetMouseRGB/x64
+*.user
+*.vcxproj
