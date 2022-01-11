@@ -44,9 +44,8 @@ LRESULT CALLBACK keyProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
 	//在WH_KEYBOARD_LL模式下lParam 是指向KBDLLHOOKSTRUCT类型地址
 	KBDLLHOOKSTRUCT *pkbhs = (KBDLLHOOKSTRUCT *)lParam;
-	//如果nCode等于HC_ACTION则处理该消息，如果小于0，则钩子子程就必须将该消息传递给 CallNextHookEx
-	//if (nCode == HC_ACTION){
-	//if (pkbhs->vkCode == VK_ESCAPE && GetAsyncKeyState(VK_CONTROL) & 0x8000) {
+
+	//只监听键盘按下，否则按键和抬起都会触发，会导致一次操作两次触发
 	if (wParam == WM_KEYDOWN)
 	{
 		if (pkbhs->vkCode == 0x51 && (GetAsyncKeyState(VK_CONTROL) & 0x8000)) {
