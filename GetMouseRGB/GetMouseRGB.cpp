@@ -6,11 +6,12 @@ GetMouseRGB::GetMouseRGB(QWidget *parent)
 
     ui.setupUi(this);
 
-
-
 	this->setMaximumSize(this->size());
 	this->setMinimumSize(this->size());
-	//this->setWindowFlags(this->windowFlags()&~Qt::WindowMinMaxButtonsHint);
+
+	//右上角只有一个关闭按钮，和原始窗口关闭按钮一致
+	this->setWindowFlags(Qt::WindowCloseButtonHint | Qt::WindowStaysOnTopHint);
+
 	connect(&MonitorThread, &MonitorRgbThread::hasRGB, this, &GetMouseRGB::getRGB);
 	MonitorThread.start();
 

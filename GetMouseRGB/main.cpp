@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	QIcon icon;
 	icon.addFile(QStringLiteral("./icon/pc.ico"), QSize(), QIcon::Normal, QIcon::Off);
 	w.setWindowIcon(icon);
-
+	//w.setWindowState((w.windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
 	//setHook();
 	//w.setWindowFlags(Qt::WindowStaysOnTopHint);
 	//w.setWindowFlags(w.windowFlags()&~Qt::WindowCloseButtonHint);
@@ -32,5 +32,6 @@ int main(int argc, char *argv[])
 	//w.showMinimized();
 	w.show();
 
+	
     return a.exec();
 }
